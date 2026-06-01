@@ -52,7 +52,7 @@ const ContactPage: PageComponent = () => {
   };
 
   return (
-    <div className="grid-section" style={{ minHeight: 'calc(100vh - 60px)', paddingBottom: '5rem' }}>
+    <div className="grid-section" style={{ minHeight: 'calc(100vh - 60px)', paddingBottom: '5rem', background: 'var(--background)' }}>
       <div className="container pt-5">
         <div className="text-center mb-5 position-relative" style={{ zIndex: 10 }}>
           <h1 style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, color: 'var(--foreground)', fontSize: '3rem' }}>

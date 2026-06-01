@@ -2,7 +2,7 @@ import { PageComponent, Link } from 'rasengan';
 
 const AboutPage: PageComponent = () => {
   return (
-    <div className="grid-section" style={{ minHeight: 'calc(100vh - 60px)', paddingBottom: '5rem' }}>
+    <div className="grid-section" style={{ minHeight: 'calc(100vh - 60px)', paddingBottom: '5rem', background: 'var(--background)' }}>
       <div className="container pt-5">
         
         {/* En-tête de page aligné */}

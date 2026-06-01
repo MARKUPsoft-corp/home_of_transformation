@@ -249,7 +249,7 @@ const Page: PageComponent = () => {
       </section>
 
       {/* ===== APERÇU SERVICES ===== */}
-      <section className="grid-section" style={{ padding: '5rem 0' }}>
+      <section className="grid-section" style={{ padding: '5rem 0', background: 'var(--background)' }}>
         <div className="container">
           <div className="text-center mb-5">
             <h2 className="section-title" style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, color: 'var(--foreground)', fontSize: '2rem' }}>
