@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "rasengan dev",
     "build": "rasengan build",
-    "serve": "rasengan-serve ./dist"
+    "serve": "rasengan-serve ./dist",
+    "start": "PORT=5320 rasengan-serve ./dist"
   },
   "dependencies": {
     "@rasenganjs/image": "^1.0.0",
