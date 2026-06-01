@@ -295,6 +295,8 @@ const RootLayout: LayoutComponent = () => {
       `}</style>
 
       {/* ===== CONTENU ===== */}
+      {/* Spacer pour compenser la navbar fixed de 60px */}
+      <div style={{ height: '60px', flexShrink: 0 }} aria-hidden="true" />
       <main style={{ flex: 1 }}>
         <Outlet />
       </main>
