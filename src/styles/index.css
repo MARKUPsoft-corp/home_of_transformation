@@ -74,26 +74,24 @@ h6,
    Navbar Glassmorphism — Light
    ========================================= */
 .navbar-glass {
-  background-color: oklch(100% 0 0 / 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border);
-  position: fixed;
+  background-color: oklch(100% 0 0 / 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+  /* Pas de délimitation visible */
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1050;
+  z-index: 50;
   height: 60px;
   padding: 0;
-  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 1px 24px 0 rgba(0,0,0,0.04);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 /* Navbar — Dark mode */
 .dark .navbar-glass {
-  background-color: oklch(8% 0.01 278.3 / 0.88);
-  border-bottom-color: oklch(23% 0.02 275.67 / 0.7);
-  box-shadow: 0 1px 24px 0 rgba(0,0,0,0.35);
+  background-color: oklch(6.253% .0101 278.3 / 0.6);
+  /* Plus transparent pour un meilleur glassmorphism */
+  border-bottom-color: transparent;
 }
 
 .navbar-glass .container {
