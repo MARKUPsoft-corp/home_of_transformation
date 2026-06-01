@@ -58,6 +58,7 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   transition: background-color 0.3s ease, color 0.3s ease;
+  padding-top: 60px; /* Compense la navbar fixed de 60px */
 }
 
 h1,
@@ -74,24 +75,26 @@ h6,
    Navbar Glassmorphism — Light
    ========================================= */
 .navbar-glass {
-  background-color: oklch(100% 0 0 / 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid transparent;
-  /* Pas de délimitation visible */
-  position: sticky;
+  background-color: oklch(100% 0 0 / 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  position: fixed;
   top: 0;
-  z-index: 50;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   height: 60px;
   padding: 0;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 1px 24px 0 rgba(0,0,0,0.04);
 }
 
 /* Navbar — Dark mode */
 .dark .navbar-glass {
-  background-color: oklch(6.253% .0101 278.3 / 0.6);
-  /* Plus transparent pour un meilleur glassmorphism */
-  border-bottom-color: transparent;
+  background-color: oklch(8% 0.01 278.3 / 0.88);
+  border-bottom-color: oklch(23% 0.02 275.67 / 0.7);
+  box-shadow: 0 1px 24px 0 rgba(0,0,0,0.35);
 }
 
 .navbar-glass .container {
