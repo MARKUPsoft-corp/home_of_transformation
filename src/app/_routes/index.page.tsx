@@ -11,6 +11,7 @@ const Page: PageComponent = () => {
         background: 'var(--background)',
         overflow: 'hidden',
         position: 'relative',
+        paddingTop: '80px',
       }}>
         {/* Cercles décoratifs en arrière-plan */}
         <div style={{ position: 'absolute', top: '-80px', right: '-80px', width: '400px', height: '400px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(59,130,246,0.07) 0%, transparent 70%)', pointerEvents: 'none' }} />
