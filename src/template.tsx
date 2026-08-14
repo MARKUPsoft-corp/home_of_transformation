@@ -5,7 +5,7 @@ export default function Template({ Head, Body, Script }: TemplateProps) {
     <html lang="fr">
       <Head>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <link rel="icon" type="image/svg+xml" href="/rasengan.svg" />
         
         {/* Typographie style Rasengan (Geist + Raleway) */}

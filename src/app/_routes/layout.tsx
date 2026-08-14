@@ -55,7 +55,7 @@ const RootLayout: LayoutComponent = () => {
     <React.Fragment>
       {/* ===== NAVBAR GLASSMORPHISM ===== */}
       <nav className="navbar navbar-glass">
-        <div className="container d-flex align-items-center" style={{ height: '60px' }}>
+        <div className="container d-flex align-items-center">
 
           {/* Brand */}
           <Link className="navbar-brand d-flex align-items-center gap-2 me-4" to="/" style={{ textDecoration: 'none', color: 'var(--foreground)' }}>

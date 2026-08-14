@@ -81,12 +81,21 @@ h6,
   width: 100% !important;
   top: 0 !important;
   z-index: 1030 !important;
-  height: calc(60px + env(safe-area-inset-top));
-  padding-top: env(safe-area-inset-top) !important;
-  padding-bottom: 0 !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
+  
+  display: flex !important;
+  align-items: flex-end !important;
+  
+  min-height: 60px !important;
+  min-height: calc(60px + env(safe-area-inset-top, 0px)) !important;
+  padding: 0 !important;
+  
   transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.navbar-glass .container {
+  height: 60px !important;
+  display: flex;
+  align-items: center;
 }
 
 /* Navbar — Dark mode */
@@ -96,9 +105,7 @@ h6,
   border-bottom-color: transparent;
 }
 
-.navbar-glass .container {
-  height: 100%;
-}
+/* On supprime .navbar-glass .container { height: 100%; } car ce n'est plus nécessaire */
 
 .navbar-glass .navbar-brand {
   font-family: var(--font-heading);

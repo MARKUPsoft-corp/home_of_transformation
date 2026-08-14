@@ -243,7 +243,7 @@ const Page: PageComponent = () => {
       </section>
 
       {/* ===== BANNIÈRE MÉTHODE 360 ===== */}
-      <section style={{ background: 'linear-gradient(135deg, var(--card) 0%, rgba(59,130,246,0.03) 100%)', padding: '2.5rem 0', borderBottom: '1px solid var(--border)', borderTop: '1px solid var(--border)', boxShadow: '0 4px 20px rgba(0,0,0,0.02)' }}>
+      <section style={{ background: 'var(--card)', padding: '2.5rem 0', borderBottom: '1px solid var(--border)', borderTop: '1px solid var(--border)', boxShadow: '0 4px 20px rgba(0,0,0,0.02)' }}>
         <div className="container">
           <div className="row g-4 align-items-center text-center text-lg-start">
             <div className="col-lg-5">
