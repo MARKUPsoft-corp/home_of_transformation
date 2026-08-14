@@ -26,13 +26,15 @@ const Page: PageComponent = () => {
               <div className="hero-badge-wrapper" style={{ marginBottom: '1.5rem' }}>
                 <div style={{
                   display: 'inline-flex', alignItems: 'center', gap: '8px',
-                  background: 'rgba(59,130,246,0.1)', border: '1px solid rgba(59,130,246,0.2)',
-                  borderRadius: '8px', padding: '6px 16px',
-                  fontSize: '0.875rem', fontWeight: 500, color: 'var(--primary)',
+                  background: 'rgba(59,130,246,0.05)', border: '1px solid rgba(59,130,246,0.15)',
+                  backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)',
+                  boxShadow: '0 4px 12px rgba(59,130,246,0.08)',
+                  borderRadius: '10px', padding: '8px 20px',
+                  fontSize: '0.875rem', fontWeight: 600, color: 'var(--primary)',
                   fontFamily: 'var(--font-heading)', letterSpacing: '0.01em',
-                  transition: 'border 0.2s ease'
+                  transition: 'all 0.3s ease'
                 }} className="hero-badge">
-                  <span style={{ fontSize: '0.85rem' }}><i className="bi bi-bullseye"></i></span>
+                  <span style={{ fontSize: '0.9rem' }}><i className="bi bi-bullseye"></i></span>
                   Transformation intérieure & extérieure
                 </div>
               </div>
@@ -47,7 +49,7 @@ const Page: PageComponent = () => {
                 letterSpacing: '-0.02em',
                 marginBottom: '1.5rem',
               }}>
-                Et si votre <span style={{ color: 'var(--primary)' }}>succès</span> se voyait, se ressentait... et se vivait chez vous ?
+                Et si votre <span style={{ color: 'var(--primary)', textShadow: '0 2px 10px rgba(59,130,246,0.2)' }}>succès</span> se voyait, se ressentait... et se vivait chez vous ?
               </h1>
 
               {/* Sous-titre */}
@@ -241,12 +243,12 @@ const Page: PageComponent = () => {
       </section>
 
       {/* ===== BANNIÈRE MÉTHODE 360 ===== */}
-      <section style={{ background: 'var(--card)', padding: '2.5rem 0', borderBottom: '1px solid var(--border)', borderTop: '1px solid var(--border)' }}>
+      <section style={{ background: 'linear-gradient(135deg, var(--card) 0%, rgba(59,130,246,0.03) 100%)', padding: '2.5rem 0', borderBottom: '1px solid var(--border)', borderTop: '1px solid var(--border)', boxShadow: '0 4px 20px rgba(0,0,0,0.02)' }}>
         <div className="container">
           <div className="row g-4 align-items-center text-center text-lg-start">
             <div className="col-lg-5">
               <h2 style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: '1.5rem', color: 'var(--foreground)', margin: 0, lineHeight: 1.4 }}>
-                La première méthode 360° à Libreville qui aligne :<br />
+                La première méthode 360° au Cameroun qui aligne :<br />
                 <span style={{ color: 'var(--primary)' }}>Carrière • Bien-être • Image</span>
               </h2>
             </div>
@@ -430,7 +432,7 @@ const Page: PageComponent = () => {
                   </div>
                   <div>
                     <h5 style={{ margin: 0, fontFamily: 'var(--font-heading)', fontWeight: 700, color: 'var(--foreground)' }}>Ulrich, 34 ans</h5>
-                    <span style={{ color: 'var(--muted-foreground)', fontSize: '0.9rem' }}>Libreville</span>
+                    <span style={{ color: 'var(--muted-foreground)', fontSize: '0.9rem' }}>Cameroun</span>
                   </div>
                 </div>
               </div>
