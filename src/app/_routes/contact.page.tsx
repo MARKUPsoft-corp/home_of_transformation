@@ -5,8 +5,11 @@ const ContactPage: PageComponent = () => {
   const [serviceId, setServiceId] = useState<string>('');
   const [name, setName] = useState('');
   const [surname, setSurname] = useState('');
+  const [age, setAge] = useState('');
   const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [problem, setProblem] = useState('');
+  const [expectation, setExpectation] = useState('');
+  const [paymentMode, setPaymentMode] = useState('');
   const selectRef = useRef<HTMLSelectElement>(null);
 
   useEffect(() => {
@@ -26,11 +29,14 @@ const ContactPage: PageComponent = () => {
     
     // Formatage texte enrichi pour WhatsApp (Maintient les lignes)
     const whatsappMsg = `*🏠 Nouvelle demande (Home of Transformation)*\n\n`
-      + `*Nom* : ${name} ${surname}\n`
+      + `*Nom et Prénom* : ${name} ${surname}\n`
+      + `*Âge* : ${age} ans\n`
       + `*Email* : ${email}\n`
-      + `*Service* : ${serviceName}\n\n`
-      + `*Message* :\n_${message}_\n\n`
-      + `✅ Je suis informé(e) des frais de consultation à *2 000 FCFA*.`;
+      + `*Service* : ${serviceName}\n`
+      + `*Paiement* : ${paymentMode}\n\n`
+      + `*Problème rencontré* :\n_${problem}_\n\n`
+      + `*Attentes* :\n_${expectation}_\n\n`
+      + `✅ Je suis informé(e) des frais de consultation à *2 500 FCFA* et de l'obligation de prévoir 2 cahiers.`;
       
     // Le numéro de destination
     const phone = "24102866292";
@@ -59,8 +65,8 @@ const ContactPage: PageComponent = () => {
             Prendre Rendez-vous
           </h1>
           <div style={{ width: '60px', height: '4px', backgroundColor: 'var(--primary)', margin: '1rem auto' }}></div>
-          <p style={{ color: 'var(--muted-foreground)', maxWidth: '600px', margin: '0 auto', fontSize: '1.125rem' }}>
-            Prêt à entamer votre transformation ? Remplissez ce formulaire pour réserver une séance ou pour toute demande de renseignement.
+          <p style={{ color: 'var(--muted-foreground)', maxWidth: '650px', margin: '0 auto', fontSize: '1.125rem' }}>
+            Nous sommes le moyen le plus sûr et efficace pour vous rendre unique et particulier dans la vie professionnelle et la vie en général 👌🏾. <strong>Bienvenue chez nous, chez vous.</strong>
           </p>
         </div>
 
@@ -100,17 +106,21 @@ const ContactPage: PageComponent = () => {
                 
                 {/* Rappel des frais visible dans le formuaire mobile */}
                 <div className="d-block d-lg-none mb-4 p-3 rounded" style={{ background: 'rgba(59,130,246,0.08)', border: '1px solid rgba(59,130,246,0.3)', color: 'var(--primary)' }}>
-                  <i className="bi bi-info-circle-fill me-2"></i> Frais de consultation : <strong>2 000 FCFA</strong>
+                  <i className="bi bi-info-circle-fill me-2"></i> Frais de consultation : <strong>2 500 FCFA</strong>
                 </div>
 
                 <div className="row g-3 mb-4">
-                  <div className="col-md-6">
+                  <div className="col-md-5">
                     <label htmlFor="name" className="form-label">Nom <span style={{ color: 'var(--primary)' }}>*</span></label>
                     <input type="text" className="form-control custom-input" id="name" placeholder="Ex: YAKAM" required value={name} onChange={e => setName(e.target.value)} />
                   </div>
-                  <div className="col-md-6">
+                  <div className="col-md-4">
                      <label htmlFor="surname" className="form-label">Prénom</label>
                      <input type="text" className="form-control custom-input" id="surname" placeholder="Ex: Emmanuel" value={surname} onChange={e => setSurname(e.target.value)} />
+                  </div>
+                  <div className="col-md-3">
+                     <label htmlFor="age" className="form-label">Âge <span style={{ color: 'var(--primary)' }}>*</span></label>
+                     <input type="number" className="form-control custom-input" id="age" placeholder="Ex: 30" required value={age} onChange={e => setAge(e.target.value)} />
                   </div>
                 </div>
 
@@ -137,15 +147,41 @@ const ContactPage: PageComponent = () => {
                     <option value="5">Gestion de problèmes (écoute sans jugement)</option>
                     <option value="6">Coaching en art oratoire</option>
                     <option value="7">Coaching vestimentaire</option>
-                    <option value="8">Élégance pratique & Foulard</option>
+                    <option value="8">Élégance féminine et Art du foulard</option>
                     <option value="9">Décoration intérieure</option>
                     <option value="10">Rangement de maison</option>
+                    <option value="11">Secret des épouses épanouies</option>
                   </select>
+                </div>
+
+                <div className="mb-4">
+                  <label htmlFor="problem" className="form-label">Type de problème rencontré <span style={{ color: 'var(--primary)' }}>*</span></label>
+                  <textarea className="form-control custom-input" id="problem" rows={2} placeholder="Petite description du problème..." required value={problem} onChange={e => setProblem(e.target.value)}></textarea>
                 </div>
                 
                 <div className="mb-4">
-                  <label htmlFor="message" className="form-label">Votre Besoin / Message <span style={{ color: 'var(--primary)' }}>*</span></label>
-                  <textarea className="form-control custom-input" id="message" rows={4} placeholder="Décrivez en quelques mots ce que vous recherchez..." required value={message} onChange={e => setMessage(e.target.value)}></textarea>
+                  <label htmlFor="expectation" className="form-label">Ce que vous aimeriez voir chez vous après le travail fait <span style={{ color: 'var(--primary)' }}>*</span></label>
+                  <textarea className="form-control custom-input" id="expectation" rows={2} placeholder="Vos attentes..." required value={expectation} onChange={e => setExpectation(e.target.value)}></textarea>
+                </div>
+
+                <div className="mb-4">
+                  <label htmlFor="payment" className="form-label">Mode de paiement <span style={{ color: 'var(--primary)' }}>*</span></label>
+                  <select 
+                    className="form-select custom-input" 
+                    id="payment" 
+                    style={{ appearance: 'auto' }}
+                    required
+                    value={paymentMode}
+                    onChange={(e) => setPaymentMode(e.target.value)}
+                  >
+                    <option value="">-- Sélectionnez le mode de paiement --</option>
+                    <option value="En tranche">En tranche</option>
+                    <option value="Versement complet">Versement complet</option>
+                  </select>
+                </div>
+
+                <div className="mb-4 p-3 rounded" style={{ background: 'rgba(59,130,246,0.08)', border: '1px dashed rgba(59,130,246,0.5)', color: 'var(--foreground)', fontSize: '0.9rem' }}>
+                  <strong><i className="bi bi-journal-text me-2"></i> Note :</strong> 2 cahiers sont obligatoires pour le début du travail (un reste au bureau avec moi et avec vous).
                 </div>
 
                 <button type="submit" className="btn btn-primary w-100 py-3 d-flex align-items-center justify-content-center gap-2 shadow-sm" style={{ fontWeight: 600, borderRadius: '0.75rem', fontSize: '1.05rem' }}>
@@ -179,7 +215,7 @@ const ContactPage: PageComponent = () => {
                   <div>
                     <h5 style={{ fontWeight: 700, color: 'var(--primary)', marginBottom: '0.35rem', fontSize: '1.15rem' }}>Frais de consultation</h5>
                     <p style={{ color: 'var(--foreground)', margin: 0, lineHeight: 1.5, fontSize: '0.95rem', fontWeight: 500 }}>
-                      Toute consultation est fixée à <span style={{fontSize:'1.1rem', background:'var(--primary)', color:'white', padding:'2px 8px', borderRadius:'6px', display:'inline-block'}}>2 000 FCFA</span>
+                      Toute consultation est fixée à <span style={{fontSize:'1.1rem', background:'var(--primary)', color:'white', padding:'2px 8px', borderRadius:'6px', display:'inline-block'}}>2 500 FCFA</span>
                     </p>
                   </div>
                 </div>
@@ -200,7 +236,7 @@ const ContactPage: PageComponent = () => {
                   </div>
                   <div>
                     <h5 style={{ fontWeight: 600, color: 'var(--foreground)', marginBottom: '0.35rem', fontSize: '1.1rem' }}>Ligne Directe</h5>
-                    <p style={{ color: 'var(--muted-foreground)', margin: 0, lineHeight: 1.6, fontSize: '0.95rem' }}>+241 02 86 62 92</p>
+                    <p style={{ color: 'var(--muted-foreground)', margin: 0, lineHeight: 1.6, fontSize: '0.95rem' }}>+241 02 86 62 92<br/>+241 65 97 59 035</p>
                   </div>
                 </div>
                 
@@ -210,7 +246,7 @@ const ContactPage: PageComponent = () => {
                   </div>
                   <div>
                     <h5 style={{ fontWeight: 600, color: 'var(--foreground)', marginBottom: '0.35rem', fontSize: '1.1rem' }}>Support Client</h5>
-                    <p style={{ color: 'var(--muted-foreground)', margin: 0, lineHeight: 1.6, fontSize: '0.95rem' }}>contact@homeoftransformation.com</p>
+                    <p style={{ color: 'var(--muted-foreground)', margin: 0, lineHeight: 1.6, fontSize: '0.95rem' }}>prunellenono@icloud.com</p>
                   </div>
                 </div>
                 

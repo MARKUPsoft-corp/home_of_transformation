@@ -31,14 +31,14 @@ const AboutPage: PageComponent = () => {
             <div style={{ width: '60px', height: '4px', backgroundColor: 'var(--primary)', marginBottom: '2rem' }}></div>
             
             <p style={{ fontSize: '1.15rem', color: 'var(--foreground)', borderLeft: '4px solid var(--primary)', paddingLeft: '1rem', fontWeight: 500, marginBottom: '2rem' }}>
-              Chez Home of Transformation, notre mission est de vous accompagner de manière bienveillante et personnalisée pour vous aider à atteindre vos objectifs, qu'ils soient professionnels ou personnels.
+              Chez Home of Transformation, notre mission est de vous offrir la toute première méthode d'accompagnement à 360°. Nous unifions votre progression pour des résultats visibles, durables et globaux.
             </p>
             
             <p style={{ color: 'var(--muted-foreground)', lineHeight: 1.7, marginBottom: '1.5rem' }}>
-              Nous croyons fermement que chaque individu possède des talents uniques qui ne demandent qu'à être révélés. Que ce soit pour améliorer vos performances au bureau, sauver ou renforcer votre couple, trouver votre style vestimentaire unique, ou même sublimer votre espace de vie pour favoriser le bien-être, nous avons la méthode adaptée.
+              Nous croyons fermement que votre vie professionnelle, vos relations personnelles et l'image que vous projetez (sur vous et dans votre domicile) sont indissociables. Si l'un de ces piliers est négligé, l'équilibre global est compromis. C'est pourquoi nous intervenons simultanément sur 3 axes : <strong>la Performance (Carrière), le Bien-être (Relations et Émotions) et l'Image (Style et Art de vivre)</strong>.
             </p>
             <p style={{ color: 'var(--muted-foreground)', lineHeight: 1.7, marginBottom: '2rem' }}>
-              Nous prônons une écoute active, <strong style={{ color: 'var(--foreground)' }}>sans aucun jugement</strong>, dans un cadre sécurisant et de confiance.
+              Grâce à notre approche holistique, nous vous offrons un espace d'écoute <strong style={{ color: 'var(--foreground)' }}>sans aucun jugement</strong>, dans un cadre sécurisant et bienveillant, pour faire éclore la meilleure version de vous-même de l'intérieur vers l'extérieur.
             </p>
             
             <Link to="/contact" className="btn btn-primary d-inline-flex align-items-center gap-2 py-2 px-4 shadow-sm" style={{ fontWeight: 600 }}>

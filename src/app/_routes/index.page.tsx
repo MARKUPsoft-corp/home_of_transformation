@@ -50,39 +50,15 @@ const Page: PageComponent = () => {
                 Et si votre <span style={{ color: 'var(--primary)' }}>succès</span> se voyait, se ressentait... et se vivait chez vous ?
               </h1>
 
-              {/* Sous-titre et puces */}
+              {/* Sous-titre */}
               <div style={{ marginBottom: '2.5rem' }}>
                 <p style={{
-                  fontSize: '1.15rem',
-                  color: 'var(--foreground)',
-                  fontWeight: 600,
-                  lineHeight: 1.6,
-                  marginBottom: '1rem',
-                  fontFamily: 'var(--font-heading)',
-                }}>
-                  La première méthode 360° à Libreville qui aligne :<br/>
-                  <span style={{ color: 'var(--primary)' }}>Carrière • Bien-être • Image</span>
-                </p>
-                <p style={{
-                  fontSize: '1.05rem',
+                  fontSize: '1.25rem',
                   color: 'var(--muted-foreground)',
                   lineHeight: 1.6,
-                  marginBottom: '1.25rem'
                 }}>
                   Vous avez le potentiel. Nous avons le plan pour le révéler, de l’intérieur à l’extérieur.
                 </p>
-                
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, color: 'var(--muted-foreground)', fontSize: '0.95rem' }}>
-                  <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
-                    <i className="bi bi-check-circle-fill text-primary mt-1"></i> Coaching pro & leadership
-                  </li>
-                  <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
-                    <i className="bi bi-check-circle-fill text-primary mt-1"></i> Confiance en soi & équilibre émotionnel
-                  </li>
-                  <li style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
-                    <i className="bi bi-check-circle-fill text-primary mt-1"></i> Style, élégance & harmonie de votre intérieur
-                  </li>
-                </ul>
               </div>
 
               {/* CTAs */}
@@ -260,6 +236,33 @@ const Page: PageComponent = () => {
               <style>{`.hero-badge:hover { border-color: rgba(59,130,246,0.3) !important; }`}</style>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* ===== BANNIÈRE MÉTHODE 360 ===== */}
+      <section style={{ background: 'var(--card)', padding: '2.5rem 0', borderBottom: '1px solid var(--border)', borderTop: '1px solid var(--border)' }}>
+        <div className="container">
+          <div className="row g-4 align-items-center text-center text-lg-start">
+            <div className="col-lg-5">
+              <h2 style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: '1.5rem', color: 'var(--foreground)', margin: 0, lineHeight: 1.4 }}>
+                La première méthode 360° à Libreville qui aligne :<br />
+                <span style={{ color: 'var(--primary)' }}>Carrière • Bien-être • Image</span>
+              </h2>
+            </div>
+            <div className="col-lg-7">
+              <div className="d-flex flex-column flex-md-row gap-3 gap-lg-4 justify-content-center justify-content-lg-end">
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', fontSize: '1rem', color: 'var(--muted-foreground)', fontWeight: 500 }}>
+                  <i className="bi bi-check-circle-fill text-primary"></i> Coaching pro
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', fontSize: '1rem', color: 'var(--muted-foreground)', fontWeight: 500 }}>
+                  <i className="bi bi-check-circle-fill text-primary"></i> Équilibre émotionnel
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', fontSize: '1rem', color: 'var(--muted-foreground)', fontWeight: 500 }}>
+                  <i className="bi bi-check-circle-fill text-primary"></i> Style & intérieur
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

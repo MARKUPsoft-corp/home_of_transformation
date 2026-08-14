@@ -54,14 +54,16 @@ const ServicesPage: PageComponent = () => {
       detail: "Qu’il s’agisse de décisions difficiles, de transitions professionnelles ou personnelles, de perte de sens ou de problèmes relationnels non catégorisés — cet espace est le vôtre. En 3 séances intenses, nous analysons votre situation avec un regard extérieur bienveillant, identifions les blocages profonds et élaborons ensemble des solutions pragmatiques et adaptées à votre réalité." },
     { icon: "bi-mic", img: "https://images.unsplash.com/photo-1551818255-e6e10975bc17?auto=format&fit=crop&q=80&w=800", title: "Coaching en art oratoire", desc: "Savoir parler en public, gérer le stress, réussir un entretien ou une soutenance.", time: "1 mois (3 séances d'1h40/semaine)",
       detail: "Parler avec assurance, convaincre, captiver un auditoire — ces compétences s’acquièrent. Ce programme d’un mois couvre : la gestion du stress scénique, la structuration du discours, le langage non-verbal, la modulation de la voix et la gestion des questions inattendues. Idéal avant un entretien, une soutenance, un pitch ou toute prise de parole importante." },
-    { icon: "bi-person-lines-fill", img: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=800", title: "Coaching vestimentaire (H/F)", desc: "Agencement, ajustement, colorimétrie selon la silhouette à moindre coût.", time: "3 semaines (2 séances d'1h45/semaine)",
+    { icon: "bi-person-lines-fill", img: "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=800", title: "Coaching vestimentaire (H/F)", desc: "Agencement, ajustement, colorimétrie selon la silhouette à moindre coût.", time: "3 semaines (2 séances d'1h45/semaine)",
       detail: "Votre garde-robe est un outil de communication puissant. En 3 semaines, nous analysons votre silhouette, vos tons de teint, votre style de vie et vos objectifs pour définir une identité vestimentaire qui vous ressemble. Vous repartirez avec des combinaisons tenues optimisées, des techniques d’achat intelligent et la confiance de vous habiller avec aisance." },
-    { icon: "bi-magic", img: "https://images.unsplash.com/photo-1584916201218-f4242ceb4809?auto=format&fit=crop&q=80&w=800", title: "Élégance pratique & Foulard", desc: "S'habiller élégant, class, chic avec un foulard (bureau, voyage, église...).", time: "1 semaine (4 séances de 35 min)",
+    { icon: "bi-magic", img: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&q=80&w=800", title: "Élégance féminine et Art du foulard", desc: "S'habiller élégant, class, chic avec un foulard (bureau, voyage, église...).", time: "1 semaine (4 séances de 35 min)",
       detail: "L’art du foulard est une forme d’élégance à la portée de toutes. En 4 séances pratiques et concentrées, vous apprendrez plus de 15 façons de nouer, draper et porter un foulard pour chaque occasion : au bureau, en voyage, pour une cérémonie... Chaque technique est accompagnée de conseils couleur et matière pour sublimer votre tenue." },
     { icon: "bi-house-heart", img: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800", title: "Décoration intérieure", desc: "Matériaux chic et élégants selon votre budget ou services à moindre coût.", time: "Sur devis",
       detail: "Votre espace de vie influence directement votre bien-être et votre productivité. Nous intervenons pour vous aider à créer un intérieur harmonieux, élégant et fonctionnel — quel que soit votre budget. Du choix des matériaux aux associations de couleurs, en passant par l’agencement des meubles, chaque décision est pensée pour vous. Devis gratuit et personnalisé après une première consultation." },
     { icon: "bi-box-seam", img: "https://images.unsplash.com/photo-1481277542470-605612bd2d61?auto=format&fit=crop&q=80&w=800", title: "Rangement de maison", desc: "Solutions rapides pour un espace propre, bien rangé et sain en quelques heures.", time: "Sur devis",
       detail: "Un chez-vous bien organisé, c’est un esprit plus libre. Nos experts du rangement interviennent directement chez vous pour réaménager vos espaces selon des méthodes éprouvées (inspiration KonMari, rangement fonctionnel). Résultat : des espaces libérés, des solutions de rangement esthétiques et durables, et une sérénité retrouvée. Devis adapté à la surface et au niveau de désencombrement." },
+    { icon: "bi-suit-heart-fill", img: "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=800", title: "Secret des épouses épanouies", desc: "Les secrets pour garder la flamme du début et l'équilibre dans votre ménage.", time: "Sur consultation",
+      detail: "Les secrets que la jeune fille devrait savoir pour garder la flamme du début et l’équilibre dans son ménage pendant son périple matrimonial. Un accompagnement bienveillant pour poser les fondations solides d'une vie de couple épanouie et durable." },
   ];
 
   const categories = [
@@ -75,7 +77,7 @@ const ServicesPage: PageComponent = () => {
       title: "Relations • Bien-être • Équilibre",
       desc: "Pour une confiance et une sérénité à toute épreuve.",
       icon: "bi-heart",
-      indices: [2, 3, 4] // Thérapie, Caractère, Problèmes vie
+      indices: [2, 3, 4, 10] // Thérapie, Caractère, Problèmes vie, Secret épouses
     },
     {
       title: "Image • Élégance • Art de vivre",
@@ -283,7 +285,7 @@ const ServicesPage: PageComponent = () => {
                 <div style={{ background: 'rgba(59,130,246,0.08)', border: '1px solid rgba(59,130,246,0.3)', padding: '12px 20px', borderRadius: '10px', display: 'inline-flex', alignItems: 'center', gap: '10px' }}>
                   <i className="bi bi-tag-fill" style={{ color: 'var(--primary)', fontSize: '1.15rem' }}></i>
                   <span style={{ color: 'var(--primary)', fontSize: '0.95rem' }}>
-                    <strong>Consultation initiale :</strong> 2 000 FCFA
+                    <strong>Consultation initiale :</strong> 2 500 FCFA
                   </span>
                 </div>
               </div>
