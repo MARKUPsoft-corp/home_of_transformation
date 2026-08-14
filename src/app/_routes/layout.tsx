@@ -295,7 +295,7 @@ const RootLayout: LayoutComponent = () => {
       `}</style>
 
       {/* ===== CONTENU ===== */}
-      <main style={{ flex: 1 }}>
+      <main style={{ flex: 1, paddingTop: '60px' }}>
         <Outlet />
       </main>
 
