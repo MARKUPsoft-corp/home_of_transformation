@@ -311,7 +311,7 @@ const Page: PageComponent = () => {
                     </p>
 
                     <div>
-                      <Link to="/services" style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--primary)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                      <Link to="/services" className="stretched-link" style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--primary)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
                         En savoir plus <i className="bi bi-arrow-right"></i>
                       </Link>
                     </div>
