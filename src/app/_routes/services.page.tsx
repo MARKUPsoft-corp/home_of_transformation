@@ -84,7 +84,15 @@ const ServicesPage: PageComponent = () => {
         <div className="row g-4 justify-content-center">
           {services.map((s, index) => (
             <div className="col-md-6 col-lg-4 d-flex" key={index}>
-              <div className="card w-100 overflow-hidden feature-card">
+              <div 
+                className="card w-100 overflow-hidden feature-card"
+                onClick={() => openModal(s)}
+                tabIndex={0}
+                role="button"
+                aria-label={`Voir détails : ${s.title}`}
+                onKeyDown={(e) => e.key === 'Enter' && openModal(s)}
+                style={{ cursor: 'pointer' }}
+              >
                 
                 {/* --- Emplacement pour l'image attrayante --- */}
                 <div 
@@ -95,14 +103,8 @@ const ServicesPage: PageComponent = () => {
                     display: 'flex', 
                     alignItems: 'center', 
                     justifyContent: 'center',
-                    position: 'relative',
-                    cursor: 'pointer'
+                    position: 'relative'
                   }}
-                  onClick={() => openModal(s)}
-                  tabIndex={0}
-                  role="button"
-                  aria-label={`Voir détails : ${s.title}`}
-                  onKeyDown={(e) => e.key === 'Enter' && openModal(s)}
                 >
                   <img 
                     src={s.img} 
