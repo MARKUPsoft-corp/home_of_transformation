@@ -64,6 +64,27 @@ const ServicesPage: PageComponent = () => {
       detail: "Un chez-vous bien organisé, c’est un esprit plus libre. Nos experts du rangement interviennent directement chez vous pour réaménager vos espaces selon des méthodes éprouvées (inspiration KonMari, rangement fonctionnel). Résultat : des espaces libérés, des solutions de rangement esthétiques et durables, et une sérénité retrouvée. Devis adapté à la surface et au niveau de désencombrement." },
   ];
 
+  const categories = [
+    {
+      title: "Performance • Carrière • Leadership",
+      desc: "Atteindre vos objectifs professionnels sans vous épuiser.",
+      icon: "bi-rocket-takeoff",
+      indices: [0, 1, 5] // Dév pro, Découverte talent, Art oratoire
+    },
+    {
+      title: "Relations • Bien-être • Équilibre",
+      desc: "Pour une confiance et une sérénité à toute épreuve.",
+      icon: "bi-heart",
+      indices: [2, 3, 4] // Thérapie, Caractère, Problèmes vie
+    },
+    {
+      title: "Image • Élégance • Art de vivre",
+      desc: "Parce que votre extérieur doit refléter votre valeur intérieure.",
+      icon: "bi-gem",
+      indices: [6, 7, 8, 9] // Vestimentaire, Foulard, Déco, Rangement
+    }
+  ];
+
   return (
     <>
     <div className="grid-section" style={{ minHeight: 'calc(100vh - 60px)', paddingTop: '100px', paddingBottom: '5rem', background: 'var(--background)' }}>
@@ -80,83 +101,110 @@ const ServicesPage: PageComponent = () => {
           </p>
         </div>
 
-        {/* Grille de cartes Bento */}
-        <div className="row g-4 justify-content-center">
-          {services.map((s, index) => (
-            <div className="col-md-6 col-lg-4 d-flex" key={index}>
-              <div 
-                className="card w-100 overflow-hidden feature-card"
-                onClick={() => openModal(s)}
-                tabIndex={0}
-                role="button"
-                aria-label={`Voir détails : ${s.title}`}
-                onKeyDown={(e) => e.key === 'Enter' && openModal(s)}
-                style={{ cursor: 'pointer' }}
-              >
-                
-                {/* --- Emplacement pour l'image attrayante --- */}
-                <div 
-                  style={{ 
-                    aspectRatio: '16/9', 
-                    backgroundColor: 'var(--muted)', 
-                    borderBottom: '1px solid var(--border)',
-                    display: 'flex', 
-                    alignItems: 'center', 
-                    justifyContent: 'center',
-                    position: 'relative'
-                  }}
-                >
-                  <img 
-                    src={s.img} 
-                    alt={s.title} 
-                    style={{ 
-                      width: '100%', 
-                      height: '100%', 
-                      objectFit: 'cover', 
-                      position: 'absolute',
-                      top: 0,
-                      left: 0
-                    }} 
-                  />
-                  {/* Badge numéro */}
-                  <div style={{
-                    position: 'absolute',
-                    top: '12px',
-                    right: '12px',
-                    background: 'var(--card)',
-                    color: 'var(--card-foreground)',
-                    fontWeight: 700,
-                    fontFamily: 'var(--font-heading)',
-                    padding: '4px 10px',
-                    borderRadius: '6px',
-                    fontSize: '0.8rem',
-                    boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-                    border: '1px solid var(--border)'
-                  }}>
-                    #{index + 1}
-                  </div>
+        {/* Boucle sur les catégories (Piliers 360°) */}
+        <div className="d-flex flex-column gap-5">
+          {categories.map((cat, catIndex) => (
+            <div key={catIndex} className="service-category">
+              
+              {/* En-tête de la catégorie */}
+              <div className="d-flex align-items-center gap-3 mb-4" style={{ paddingBottom: '1rem', borderBottom: '1px solid var(--border)' }}>
+                <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'rgba(59,130,246,0.1)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.4rem', flexShrink: 0 }}>
+                  <i className={`bi ${cat.icon}`}></i>
                 </div>
-
-                {/* --- Corps de texte --- */}
-                <div className="card-body p-4 d-flex flex-column">
-                  <div className="d-flex align-items-center gap-2 mb-3">
-                    <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'var(--muted)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                      <i className={`bi ${s.icon}`} style={{ fontSize: '1.1rem', color: 'var(--primary)' }}></i>
-                    </div>
-                    <h5 style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: '1.15rem', margin: 0, color: 'var(--card-title-color)' }}>
-                      {s.title}
-                    </h5>
-                  </div>
-                  
-                  <p style={{ fontSize: '0.9rem', color: 'var(--muted-foreground)', lineHeight: 1.6, flex: 1, marginBottom: '1.5rem' }}>
-                    {s.desc}
+                <div>
+                  <h2 style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, margin: 0, color: 'var(--foreground)', fontSize: '1.5rem', letterSpacing: '-0.01em' }}>
+                    {cat.title}
+                  </h2>
+                  <p style={{ margin: 0, color: 'var(--muted-foreground)', fontSize: '0.95rem', marginTop: '4px' }}>
+                    {cat.desc}
                   </p>
-                  
-                  {/* Badge de durée */}
-                  <div style={{ background: 'var(--muted)', padding: '8px 12px', borderRadius: '6px', fontSize: '0.85rem', color: 'var(--foreground)', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-                    <i className="bi bi-clock" style={{color: 'var(--primary)'}}></i> <strong style={{ fontWeight: 600 }}>Durée :</strong> {s.time}
-                  </div>
                 </div>
+              </div>
+
+              {/* Grille de cartes pour la catégorie */}
+              <div className="row g-4">
+                {cat.indices.map((serviceIndex) => {
+                  const s = services[serviceIndex];
+                  return (
+                    <div className="col-md-6 col-lg-4 d-flex" key={serviceIndex}>
+                      <div 
+                        className="card w-100 overflow-hidden feature-card"
+                        onClick={() => openModal(s)}
+                        tabIndex={0}
+                        role="button"
+                        aria-label={`Voir détails : ${s.title}`}
+                        onKeyDown={(e) => e.key === 'Enter' && openModal(s)}
+                        style={{ cursor: 'pointer' }}
+                      >
+                        
+                        {/* --- Emplacement pour l'image attrayante --- */}
+                        <div 
+                          style={{ 
+                            aspectRatio: '16/9', 
+                            backgroundColor: 'var(--muted)', 
+                            borderBottom: '1px solid var(--border)',
+                            display: 'flex', 
+                            alignItems: 'center', 
+                            justifyContent: 'center',
+                            position: 'relative'
+                          }}
+                        >
+                          <img 
+                            src={s.img} 
+                            alt={s.title} 
+                            style={{ 
+                              width: '100%', 
+                              height: '100%', 
+                              objectFit: 'cover', 
+                              position: 'absolute',
+                              top: 0,
+                              left: 0
+                            }} 
+                          />
+                          {/* Badge d'action */}
+                          <div style={{
+                            position: 'absolute',
+                            top: '12px',
+                            right: '12px',
+                            background: 'var(--card)',
+                            color: 'var(--primary)',
+                            fontWeight: 600,
+                            padding: '6px 12px',
+                            borderRadius: '20px',
+                            fontSize: '0.75rem',
+                            boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '4px'
+                          }}>
+                            Détails <i className="bi bi-arrow-up-right"></i>
+                          </div>
+                        </div>
+
+                        {/* --- Corps de texte --- */}
+                        <div className="card-body p-4 d-flex flex-column">
+                          <div className="d-flex align-items-center gap-2 mb-3">
+                            <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'var(--muted)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                              <i className={`bi ${s.icon}`} style={{ fontSize: '1.1rem', color: 'var(--primary)' }}></i>
+                            </div>
+                            <h5 style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: '1.15rem', margin: 0, color: 'var(--card-title-color)' }}>
+                              {s.title}
+                            </h5>
+                          </div>
+                          
+                          <p style={{ fontSize: '0.9rem', color: 'var(--muted-foreground)', lineHeight: 1.6, flex: 1, marginBottom: '1.5rem' }}>
+                            {s.desc}
+                          </p>
+                          
+                          {/* Badge de durée */}
+                          <div style={{ background: 'var(--muted)', padding: '8px 12px', borderRadius: '6px', fontSize: '0.85rem', color: 'var(--foreground)', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                            <i className="bi bi-clock" style={{color: 'var(--primary)'}}></i> <strong style={{ fontWeight: 600 }}>Durée :</strong> {s.time}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           ))}

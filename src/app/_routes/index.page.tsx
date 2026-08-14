@@ -26,70 +26,85 @@ const Page: PageComponent = () => {
               <div className="hero-badge-wrapper" style={{ marginBottom: '1.5rem' }}>
                 <div style={{
                   display: 'inline-flex', alignItems: 'center', gap: '8px',
-                  background: 'rgba(59,130,246,0.1)', border: '1px solid transparent',
+                  background: 'rgba(59,130,246,0.1)', border: '1px solid rgba(59,130,246,0.2)',
                   borderRadius: '8px', padding: '6px 16px',
-                  fontSize: '0.875rem', fontWeight: 300, color: 'var(--primary)',
+                  fontSize: '0.875rem', fontWeight: 500, color: 'var(--primary)',
                   fontFamily: 'var(--font-heading)', letterSpacing: '0.01em',
                   transition: 'border 0.2s ease'
                 }} className="hero-badge">
-                  <span style={{ fontSize: '0.75rem', fontWeight: 500 }}><i className="bi bi-stars"></i></span>
-                  Découvrez la meilleure version de vous-même
+                  <span style={{ fontSize: '0.85rem' }}><i className="bi bi-bullseye"></i></span>
+                  Transformation intérieure & extérieure
                 </div>
               </div>
 
-              {/* Titre principal - Style strictement identique à rasengan.dev (bg-clip-text gradient + font-weight 500) */}
+              {/* Titre principal */}
               <h1 style={{
                 fontFamily: 'var(--font-heading)',
-                fontWeight: 600, /* légèrement plus gras */
-                fontSize: 'clamp(45px, 6vw, 62px)',
+                fontWeight: 700,
+                fontSize: 'clamp(38px, 5vw, 52px)',
                 lineHeight: 1.15,
                 color: 'var(--foreground)',
                 letterSpacing: '-0.02em',
                 marginBottom: '1.5rem',
               }}>
-                Votre{' '}
-                <span style={{
-                  background: 'linear-gradient(to right, var(--primary), var(--foreground), var(--primary))',
-                  WebkitBackgroundClip: 'text',
-                  backgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  color: 'transparent'
-                }}>Transformation</span>{' '}
-                <br className="d-none d-lg-block" />commence ici.
+                Et si votre <span style={{ color: 'var(--primary)' }}>succès</span> se voyait, se ressentait... et se vivait chez vous ?
               </h1>
 
-              {/* Sous-titre */}
-              <p style={{
-                fontSize: '1.125rem',
-                color: 'var(--muted-foreground)', /* S'adapte parfaitement en clair et sombre */
-                lineHeight: 1.6,
-                maxWidth: '600px',
-                marginBottom: '2rem',
-                fontFamily: 'var(--font-sans)',
-              }}>
-                Coaching professionnel & personnel, art oratoire, thérapie de couple, développement du talent, nous vous accompagnons avec bienveillance, <strong>sans jugement</strong>.
-              </p>
+              {/* Sous-titre et puces */}
+              <div style={{ marginBottom: '2.5rem' }}>
+                <p style={{
+                  fontSize: '1.15rem',
+                  color: 'var(--foreground)',
+                  fontWeight: 600,
+                  lineHeight: 1.6,
+                  marginBottom: '1rem',
+                  fontFamily: 'var(--font-heading)',
+                }}>
+                  La première méthode 360° à Libreville qui aligne :<br/>
+                  <span style={{ color: 'var(--primary)' }}>Carrière • Bien-être • Image</span>
+                </p>
+                <p style={{
+                  fontSize: '1.05rem',
+                  color: 'var(--muted-foreground)',
+                  lineHeight: 1.6,
+                  marginBottom: '1.25rem'
+                }}>
+                  Vous avez le potentiel. Nous avons le plan pour le révéler, de l’intérieur à l’extérieur.
+                </p>
+                
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, color: 'var(--muted-foreground)', fontSize: '0.95rem' }}>
+                  <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
+                    <i className="bi bi-check-circle-fill text-primary mt-1"></i> Coaching pro & leadership
+                  </li>
+                  <li style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
+                    <i className="bi bi-check-circle-fill text-primary mt-1"></i> Confiance en soi & équilibre émotionnel
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
+                    <i className="bi bi-check-circle-fill text-primary mt-1"></i> Style, élégance & harmonie de votre intérieur
+                  </li>
+                </ul>
+              </div>
 
               {/* CTAs */}
               <div className="hero-ctas" style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
                 <Link
-                  to="/services"
-                  className="btn btn-primary"
-                  style={{ borderRadius: '6px', fontWeight: 300, padding: '12px 24px', fontSize: '1rem', fontFamily: 'var(--font-heading)', minWidth: '180px' }}
+                  to="/contact"
+                  className="btn btn-primary shadow-sm"
+                  style={{ borderRadius: '8px', fontWeight: 600, padding: '12px 28px', fontSize: '1rem', fontFamily: 'var(--font-heading)' }}
                 >
-                  Découvrir nos services
+                  <i className="bi bi-calendar-event me-2"></i> Réserver mon Bilan 360° OFFERT
                 </Link>
                 <Link
-                  to="/contact"
+                  to="/services"
                   style={{
-                    display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '6px',
-                    borderRadius: '6px', fontWeight: 300, padding: '12px 24px', minWidth: '180px',
-                    fontSize: '1rem', border: '1px solid var(--border)', fontFamily: 'var(--font-mono)',
-                    background: 'transparent', color: 'var(--foreground)', textDecoration: 'none',
+                    display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
+                    borderRadius: '8px', fontWeight: 500, padding: '12px 28px',
+                    fontSize: '1rem', border: '1px solid var(--border)', fontFamily: 'var(--font-heading)',
+                    background: 'var(--card)', color: 'var(--foreground)', textDecoration: 'none',
                     transition: 'background 0.2s',
                   }}
                 >
-                  <i className="bi bi-calendar-event"></i> Prendre RDV
+                  Découvrir l'approche <i className="bi bi-arrow-right"></i>
                 </Link>
               </div>
             </div>
@@ -254,16 +269,37 @@ const Page: PageComponent = () => {
         <div className="container">
           <div className="text-center mb-5">
             <h2 className="section-title" style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, color: 'var(--foreground)', fontSize: '2rem' }}>
-              Ce que nous vous proposons
+              Nos 3 Piliers de Transformation
             </h2>
             <div style={{ width: '48px', height: '3px', background: 'var(--primary)', margin: '12px auto 0' }}></div>
           </div>
 
           <div className="row g-4 justify-content-center">
             {[
-              { icon: 'bi-briefcase', title: 'Développement pro', desc: 'Stratégies pour une réussite foudroyante de votre business. Découvrez comment structurer votre démarche vers le succès.', color: 'var(--primary)', img: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800' },
-              { icon: 'bi-star', title: 'Découverte de talent', desc: 'Accompagnement sur-mesure pour maximiser votre réussite. Nos experts vous guident pas-à-pas.', color: '#D4A847', img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800' },
-              { icon: 'bi-heart-pulse', title: 'Thérapie & Conflits', desc: 'Gestion des désaccords, meilleure connaissance du partenaire pour créer un équilibre durable.', color: 'var(--primary)', img: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=800' },
+              { 
+                icon: 'bi-rocket-takeoff', 
+                title: 'PERFORMANCE • CARRIÈRE', 
+                desc: 'Pour atteindre vos objectifs pro sans vous épuiser.', 
+                sub: ['Coaching pro', 'Révélation de talents', 'Art oratoire'],
+                color: 'var(--primary)', 
+                img: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800' 
+              },
+              { 
+                icon: 'bi-heart', 
+                title: 'RELATIONS • BIEN-ÊTRE', 
+                desc: 'Pour une confiance et une sérénité à toute épreuve.', 
+                sub: ['Gestion des conflits', 'Coaching de vie', 'Transformation comportementale'],
+                color: '#D4A847', 
+                img: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=800' 
+              },
+              { 
+                icon: 'bi-gem', 
+                title: 'IMAGE • ART DE VIVRE', 
+                desc: 'Parce que votre extérieur doit refléter votre valeur intérieure.', 
+                sub: ['Conseil en image', 'Élégance', 'Décoration & Maison'],
+                color: 'var(--primary)', 
+                img: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=800' 
+              },
             ].map((s) => (
               <div className="col-md-6 col-lg-4 d-flex" key={s.title}>
                 {/* Structure Carte Rasengan (Bento Box style) */}
@@ -298,17 +334,25 @@ const Page: PageComponent = () => {
                   {/* --- Corps de texte --- */}
                   <div className="card-body p-4 d-flex flex-column">
                     <div className="d-flex align-items-center gap-2 mb-3">
-                      <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: `${s.color}15`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'var(--muted)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                         <i className={`bi ${s.icon}`} style={{ fontSize: '1.1rem', color: s.color }}></i>
                       </div>
-                      <h5 style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: '1.15rem', margin: 0, color: 'var(--card-title-color)' }}>
+                      <h5 style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: '1.05rem', margin: 0, color: 'var(--card-title-color)' }}>
                         {s.title}
                       </h5>
                     </div>
 
-                    <p style={{ fontSize: '0.9rem', color: 'var(--muted-foreground)', lineHeight: 1.6, flex: 1, marginBottom: '1.5rem' }}>
+                    <p style={{ fontSize: '0.9rem', color: 'var(--muted-foreground)', lineHeight: 1.6, marginBottom: '1rem' }}>
                       {s.desc}
                     </p>
+                    
+                    <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 1.5rem', flex: 1 }}>
+                      {s.sub.map((item, idx) => (
+                        <li key={idx} style={{ fontSize: '0.85rem', color: 'var(--foreground)', marginBottom: '4px', display: 'flex', gap: '6px' }}>
+                          <span style={{ color: 'var(--primary)' }}>•</span> {item}
+                        </li>
+                      ))}
+                    </ul>
 
                     <div>
                       <Link to="/services" className="stretched-link" style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--primary)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
@@ -322,9 +366,73 @@ const Page: PageComponent = () => {
           </div>
 
           <div className="text-center mt-5 position-relative" style={{ zIndex: 10 }}>
-            <Link to="/services" style={{ fontSize: '0.9rem', fontWeight: 500, color: 'var(--foreground)', border: '1px solid var(--border)', borderRadius: '6px', padding: '8px 20px', textDecoration: 'none', background: 'var(--accent)' }}>
-              Voir nos 10 services
+            <Link to="/services" style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--primary)', border: '1px solid var(--primary)', borderRadius: '8px', padding: '10px 24px', textDecoration: 'none', background: 'transparent', transition: 'all 0.2s ease', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+              Découvrir nos 10 services détaillés <i className="bi bi-arrow-right"></i>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== POURQUOI NOUS CHOISIR & TEMOIGNAGE ===== */}
+      <section style={{ padding: '5rem 0', background: 'var(--card)', borderTop: '1px solid var(--border)' }}>
+        <div className="container">
+          <div className="row g-5 align-items-center">
+            
+            {/* Colonne gauche : Avantages */}
+            <div className="col-lg-6">
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(59,130,246,0.1)', color: 'var(--primary)', padding: '6px 16px', borderRadius: '8px', fontSize: '0.875rem', fontWeight: 600, marginBottom: '1.5rem', border: '1px solid rgba(59,130,246,0.2)' }}>
+                <i className="bi bi-shield-check"></i> Notre Différence
+              </div>
+              <h2 style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, color: 'var(--foreground)', fontSize: '2.2rem', marginBottom: '1.5rem', lineHeight: 1.2 }}>
+                Pourquoi choisir <span style={{ color: 'var(--primary)' }}>Home Transformation</span> ?
+              </h2>
+              <p style={{ color: 'var(--muted-foreground)', fontSize: '1.1rem', marginBottom: '2rem', lineHeight: 1.6 }}>
+                Nous croyons que pour qu'un changement soit durable, il doit être global. Inutile de consulter 3 experts différents. Nous unifions votre progression à 360°.
+              </p>
+              
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                {[
+                  'Accompagnement personnalisé à 360°',
+                  'Méthodes modernes & efficaces',
+                  'Écoute, discrétion & professionnalisme',
+                  'Résultats visibles et durables',
+                  'Transformation intérieure & extérieure'
+                ].map((item, i) => (
+                  <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '1rem', fontSize: '1.05rem', color: 'var(--foreground)', fontWeight: 500 }}>
+                    <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: 'rgba(59,130,246,0.15)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: '1rem' }}>
+                      <i className="bi bi-check2"></i>
+                    </div>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Colonne droite : Témoignage */}
+            <div className="col-lg-6">
+              <div className="feature-card" style={{ padding: '3rem 2.5rem', background: 'var(--background)', borderRadius: '1.5rem', border: '1px solid var(--border)', position: 'relative' }}>
+                <i className="bi bi-quote" style={{ position: 'absolute', top: '1rem', right: '1.5rem', fontSize: '4rem', color: 'var(--muted)', opacity: 0.5 }}></i>
+                
+                <div style={{ display: 'flex', gap: '4px', color: '#fbbf24', marginBottom: '1.5rem', fontSize: '1.2rem' }}>
+                  <i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i>
+                </div>
+                
+                <p style={{ fontSize: '1.15rem', color: 'var(--foreground)', lineHeight: 1.8, fontStyle: 'italic', marginBottom: '2rem', position: 'relative', zIndex: 2 }}>
+                  "J’ai pris le pack complet. Résultat : promotion au travail, couple apaisé, et enfin une maison où je me sens bien. C’est la première fois qu’un coach comprend que tout est lié."
+                </p>
+                
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                  <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'var(--muted)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem', fontWeight: 600 }}>
+                    U
+                  </div>
+                  <div>
+                    <h5 style={{ margin: 0, fontFamily: 'var(--font-heading)', fontWeight: 700, color: 'var(--foreground)' }}>Ulrich, 34 ans</h5>
+                    <span style={{ color: 'var(--muted-foreground)', fontSize: '0.9rem' }}>Libreville</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
